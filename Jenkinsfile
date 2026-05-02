@@ -19,8 +19,8 @@ pipeline {
         stage('Run Container') {
             steps {
                 // Stop the old container if it exists, then start the new one
-                sh 'docker stop my-running-app || true'
-                sh 'docker rm my-running-app || true'
+                sh 'docker stop running-program || true'
+                sh 'docker rm running-program || true'
                 sh 'docker run -d --name running-program python-program:latest'
             }
         }
